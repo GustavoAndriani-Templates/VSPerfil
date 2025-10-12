@@ -260,6 +260,12 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
                 </div>
               </div>
             ))}
+            <Link
+              to="/gallery"
+              className="col-start-2 col-span-1 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-200 text-center"
+            >
+              Ver Galeria Completa
+            </Link>
           </div>
         </div>
       </section>
