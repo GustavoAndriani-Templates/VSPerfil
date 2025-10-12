@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
@@ -11,12 +11,28 @@ import Contact from './pages/Contact';
 import { machinesData } from './data/machines';
 import './styles/globals.css';
 
+export const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+
+  return null;
+};
+
+
 const App: React.FC = () => {
   return (
     <Router>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
+          <ScrollToTop />
           <Routes>
             <Route 
               path="/" 
