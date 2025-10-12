@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import Machines from './pages/Machines';
 import MachineDetails from './components/machines/MachineDetails';
+import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import { machinesData } from './data/machines';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
               path="/machines/:id" 
               element={<MachineDetails machines={machinesData} />} 
             />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
