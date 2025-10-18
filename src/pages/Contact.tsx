@@ -46,8 +46,7 @@ const Contact: React.FC = () => {
                   <Phone className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Telefone</h3>
-                    <p className="text-gray-600">(11) 3456-7890</p>
-                    <p className="text-gray-600">(11) 98765-4321</p>
+                    <p className="text-gray-600">(17) 98130-1284</p>
                   </div>
                 </div>
 
@@ -55,8 +54,7 @@ const Contact: React.FC = () => {
                   <Mail className="h-6 w-6 text-blue-600 mt-1" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">contato@metaltechimport.com.br</p>
-                    <p className="text-gray-600">vendas@metaltechimport.com.br</p>
+                    <p className="text-gray-600">cadastro@vsperfil.com.br</p>
                   </div>
                 </div>
 
@@ -65,10 +63,10 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-gray-900">Endereço</h3>
                     <p className="text-gray-600">
-                      Av. Industrial, 1234<br />
-                      Jardim das Indústrias<br />
-                      São Paulo - SP<br />
-                      CEP: 04583-100
+                      R. Silvio Piveta, 180<br />
+                      Distrito Industrial<br />
+                      Alvares Florence - São Paulo<br />
+                      CEP: 15540-096
                     </p>
                   </div>
                 </div>
@@ -77,8 +75,8 @@ const Contact: React.FC = () => {
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <h3 className="font-semibold text-gray-900 mb-4">Horário de Atendimento</h3>
                 <div className="space-y-2 text-gray-600">
-                  <p>Segunda a Sexta: 8:00 - 18:00</p>
-                  <p>Sábado: 8:00 - 12:00</p>
+                  <p>Segunda a Sexta: 07:00 às 11:30 <br/> 13:00 às 17:18</p>
+                  <p>Sábados e Domingos: Fechado</p>
                   <p>Plantão Técnico: 24/7</p>
                 </div>
               </div>

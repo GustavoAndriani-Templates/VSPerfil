@@ -7,7 +7,8 @@ import {
   Calendar, 
   ArrowLeft,
   Target,
-  Shield
+  Shield,
+  Dumbbell
 } from 'lucide-react';
 
 interface MachineDetailsProps {
@@ -107,7 +108,7 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Zap className="h-6 w-6 text-blue-600" />
+                  <Dumbbell className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Peso</p>
                     <p className="font-semibold">{machine.specifications.weight} kg</p>

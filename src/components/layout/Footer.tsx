@@ -1,5 +1,5 @@
 import React from 'react';
-import { Factory, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, FileSignature } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -10,8 +10,10 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <Factory className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">MetalTech Import</span>
+              {/*<Factory className="h-8 w-8 text-blue-400" />*/}
+              <img src="/logo-vsperfil.png" className='w-10 h-20' />
+              <span className="text-xl font-bold">VS Perfil</span>
+              <span className="text-sm text-gray-400">Tubo Galvanizado Ltda.</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Especialistas em importação de máquinas industriais de corte e dobra 
@@ -19,16 +21,20 @@ const Footer: React.FC = () => {
             </p>
             <div className="space-y-2 text-gray-400">
               <div className="flex items-center space-x-2">
+                <FileSignature className="h-4 w-4" />
+                <div>CNPJ: 37.760.225/0001-56 </div>
+              </div>
+              <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span>(11) 3456-7890</span>
+                <span>(17) 98130-1284 </span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>contato@metaltechimport.com.br</span>
+                <span>cadastro@vsperfil.com.br</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>São Paulo - SP, Brasil</span>
+                <span>Alvares Florence - São Paulo, Brasil</span>
               </div>
             </div>
           </div>
@@ -58,7 +64,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 MetalTech Import. Todos os direitos reservados.</p>
+          <p>&copy; 2025 VS PERFIL TUBO GALVANIZADO LTDA. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

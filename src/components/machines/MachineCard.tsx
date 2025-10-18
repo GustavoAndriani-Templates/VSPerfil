@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Machinery } from '../../types/machinery';
-import { Ruler, Zap, Calendar } from 'lucide-react';
+import { Ruler, Zap, Calendar, Dumbbell } from 'lucide-react';
 
 interface MachineCardProps {
   machine: Machinery;
@@ -40,7 +40,7 @@ const MachineCard: React.FC<MachineCardProps> = ({ machine }) => {
             <span>{machine.specifications.dimensions.length}x{machine.specifications.dimensions.width}mm</span>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Zap className="h-4 w-4 text-blue-600" />
+            <Dumbbell className="h-4 w-4 text-blue-600" />
             <span>{machine.specifications.weight}kg</span>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">

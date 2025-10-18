@@ -24,8 +24,8 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
   const timelineEvents = [
     {
       year: "2010",
-      title: "Fundação da MetalTech",
-      description: "Início das operações com foco em importação de máquinas industriais"
+      title: "Fundação da VS Perfil",
+      description: "Início das operações com foco em corte e dobra de metalon galvanizado"
     },
     {
       year: "2013",

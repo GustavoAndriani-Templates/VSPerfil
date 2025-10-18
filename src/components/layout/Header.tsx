@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Factory, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import logo from '/logo-vsperfil.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +22,11 @@ const Header: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <Factory className="h-10 w-10 text-blue-600" />
+            {/*<Factory className="h-10 w-10 text-blue-600" />*/}
+            <img src={logo} width={110} />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">MetalTech</h1>
-              <p className="text-sm text-gray-600">Importação de Máquinas</p>
+              <h1 className="text-2xl font-bold text-gray-900">VS Perfil</h1>
+              <p className="text-sm text-gray-600">Corte e dobra de metalon galvanizado</p>
             </div>
           </Link>
 
