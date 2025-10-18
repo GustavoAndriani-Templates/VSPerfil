@@ -7,9 +7,9 @@ const About: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Sobre a MetalTech</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Sobre a VS Perfil</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Mais de 15 anos de experiência em importação de máquinas industriais de alta qualidade
+            Mais de 15 anos de experiência em corte e dobra de metalon galvanizado de alta qualidade
           </p>
         </div>
 
@@ -19,9 +19,9 @@ const About: React.FC = () => {
             <Target className="h-12 w-12 text-blue-600 mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Nossa Missão</h2>
             <p className="text-gray-700 leading-relaxed">
-              Fornecer soluções industriais de ponta através da importação de máquinas 
-              de corte e dobra de metalon galvanizado, contribuindo para o aumento da 
-              produtividade e competitividade de nossos clientes.
+              Fornecer soluções industriais de ponta através
+              da produção e prestação de serviços de corte e dobra de metalon galvanizado,
+              contribuindo para o aumento da produtividade, precisão e competitividade de nossos clientes.
             </p>
           </div>
 
@@ -29,9 +29,9 @@ const About: React.FC = () => {
             <Award className="h-12 w-12 text-blue-600 mb-4" />
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Nossa Visão</h2>
             <p className="text-gray-700 leading-relaxed">
-              Ser referência nacional em importação de máquinas industriais, reconhecida 
-              pela qualidade dos equipamentos, excelência no atendimento e suporte 
-              técnico especializado.
+              Ser referência nacional em serviços de corte e dobra de metalon galvanizado,
+              reconhecida pela qualidade, precisão dos processos, excelência no atendimento e
+              compromisso com a satisfação dos clientes.
             </p>
           </div>
         </div>

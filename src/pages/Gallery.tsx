@@ -207,7 +207,7 @@ const Gallery: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Galeria MetalTech
+            Galeria VS Perfil
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Conheça nossa estrutura, equipamentos e todo o processo que nos torna referência no mercado

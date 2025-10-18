@@ -113,12 +113,11 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">
-              Máquinas Industriais de 
-              <span className="text-blue-300"> Alto Desempenho</span>
+              Corte e Dobra de Metalon Galvanizado de<br/>
+              <span className="text-blue-300">Alta Qualidade</span>
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Importação especializada em equipamentos de corte e dobra de metalon galvanizado. 
-              Tecnologia alemã e japonesa para maximizar sua produtividade.
+              Soluções industriais especializadas em corte e dobra de metalon galvanizado. Tecnologia de ponta e processos automatizados para maximizar a produtividade e a qualidade dos seus projetos.
             </p>
             <Link
               to="/machines"
@@ -136,10 +135,10 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Por que escolher a MetalTech?
+              Por que escolher a VS Perfil?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Somos especialistas em fornecer soluções completas para sua indústria metalúrgica
+              Somos especialistas em fornecer soluções em corte e dobra de metalon galvanizado, com foco em qualidade, inovação e atendimento ao cliente.
             </p>
           </div>
 
@@ -185,7 +184,7 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
               Nossa História
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Mais de uma década de excelência e inovação no setor metalúrgico
+              Mais de uma década de excelência e inovação na área de metalon galvanizado
             </p>
           </div>
 

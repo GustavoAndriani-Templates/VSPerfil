@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import logo from '/logo-vsperfil.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +22,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             {/*<Factory className="h-10 w-10 text-blue-600" />*/}
-            <img src={logo} width={110} />
+            <img src='/logo-vsperfil.png' className="w-20 h-30" />
             <div>
               <h1 className="text-2xl font-bold text-gray-900">VS Perfil</h1>
               <p className="text-sm text-gray-600">Corte e dobra de metalon galvanizado</p>
