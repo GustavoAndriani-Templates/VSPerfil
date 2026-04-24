@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Sobre a VS Perfil</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Mais de 15 anos de experiência em corte e dobra de metalon galvanizado de alta qualidade
+            Mais de 5 anos de experiência em corte e dobra de metalon galvanizado de alta qualidade
           </p>
         </div>
 
@@ -74,22 +74,18 @@ const About: React.FC = () => {
 
         {/* Company Info */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-xl shadow-lg p-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold mb-2">15+</div>
+              <div className="text-3xl font-bold mb-2">5+</div>
               <div className="text-blue-200">Anos de Experiência</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">500+</div>
-              <div className="text-blue-200">Máquinas Importadas</div>
+              <div className="text-3xl font-bold mb-2">500t+</div>
+              <div className="text-blue-200">Metalon Vendido</div>
             </div>
             <div>
               <div className="text-3xl font-bold mb-2">100+</div>
               <div className="text-blue-200">Clientes Satisfeitos</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">24/7</div>
-              <div className="text-blue-200">Suporte Técnico</div>
             </div>
           </div>
         </div>
