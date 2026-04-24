@@ -261,16 +261,23 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
           </button>
 
           <div className="max-w-4xl max-h-full">
-            <div className="bg-gradient-to-br from-blue-100 to-gray-100 w-full h-96 lg:h-[500px] flex items-center justify-center rounded-lg">
-              <Factory className="h-32 w-32 text-gray-400" />
-            </div>
-            <div className="text-white text-center mt-4">
-              <p className="font-semibold">{galleryImages[selectedImage].category}</p>
-              <p className="text-sm opacity-80">{galleryImages[selectedImage].alt}</p>
-              <p className="text-xs opacity-60 mt-2">
-                {selectedImage + 1} de {galleryImages.length}
-              </p>
-            </div>
+            {galleryImages[selectedImage].src ? (
+              <img src={galleryImages[selectedImage].src} alt={galleryImages[selectedImage].alt} className="w-full h-auto object-contain rounded-lg shadow-lg" />
+            ) : (
+              <>
+                <div className="bg-gradient-to-br from-blue-100 to-gray-100 w-full h-96 lg:h-[500px] flex items-center justify-center rounded-lg">
+                  <Factory className="h-32 w-32 text-gray-400" />
+                </div>
+                <div className="text-white text-center mt-4">
+                  <p className="font-semibold">{galleryImages[selectedImage].category}</p>
+                  <p className="text-sm opacity-80">{galleryImages[selectedImage].alt}</p>
+                  <p className="text-xs opacity-60 mt-2">
+                    {selectedImage + 1} de {galleryImages.length}
+                  </p>
+                </div>
+              </>
+            )}
+            
           </div>
         </div>
       )}
