@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, Filter, Grid, List } from 'lucide-react';
-
-interface GalleryImage {
-  id: number;
-  src: string;
-  alt: string;
-  category: string;
-  tags: string[];
-  date: string;
-}
+import { galleryImages } from '../data/gallery';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -17,160 +9,12 @@ const Gallery: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const imagesPerPage = 9;
 
-  // Dados da galeria - expandidos com mais imagens
-  const galleryImages: GalleryImage[] = [
-    {
-      id: 1,
-      src: "/images/gallery/fabrica-1.jpg",
-      alt: "Nossa fábrica - área de produção principal",
-      category: "Instalações",
-      tags: ["fábrica", "produção", "instalações"],
-      date: "2024-01-15"
-    },
-    {
-      id: 2,
-      src: "/images/gallery/equipamento-1.jpg",
-      alt: "Máquina de corte CNC em operação",
-      category: "Equipamentos",
-      tags: ["cnc", "corte", "operação"],
-      date: "2024-01-20"
-    },
-    {
-      id: 3,
-      src: "/images/gallery/equipe-1.jpg",
-      alt: "Nossa equipe técnica especializada",
-      category: "Equipe",
-      tags: ["equipe", "técnicos", "especialistas"],
-      date: "2024-01-25"
-    },
-    {
-      id: 4,
-      src: "/images/gallery/instalacao-1.jpg",
-      alt: "Processo de instalação em cliente",
-      category: "Instalações",
-      tags: ["instalação", "cliente", "montagem"],
-      date: "2024-02-01"
-    },
-    {
-      id: 5,
-      src: "/images/gallery/treinamento-1.jpg",
-      alt: "Sessão de treinamento técnico",
-      category: "Treinamento",
-      tags: ["treinamento", "capacitação", "técnica"],
-      date: "2024-02-10"
-    },
-    {
-      id: 6,
-      src: "/images/gallery/qualidade-1.jpg",
-      alt: "Controle de qualidade dos equipamentos",
-      category: "Qualidade",
-      tags: ["qualidade", "controle", "inspeção"],
-      date: "2024-02-15"
-    },
-    {
-      id: 7,
-      src: "/images/gallery/manutencao-1.jpg",
-      alt: "Serviço de manutenção preventiva",
-      category: "Serviços",
-      tags: ["manutenção", "preventiva", "serviço"],
-      date: "2024-02-20"
-    },
-    {
-      id: 8,
-      src: "/images/gallery/tecnologia-1.jpg",
-      alt: "Sistema de automação industrial",
-      category: "Tecnologia",
-      tags: ["automação", "tecnologia", "industria-4.0"],
-      date: "2024-02-25"
-    },
-    {
-      id: 9,
-      src: "/images/gallery/entrega-1.jpg",
-      alt: "Processo de entrega e logística",
-      category: "Logística",
-      tags: ["entrega", "logística", "transporte"],
-      date: "2024-03-01"
-    },
-    {
-      id: 10,
-      src: "/images/gallery/clientes-1.jpg",
-      alt: "Reunião com clientes estratégicos",
-      category: "Clientes",
-      tags: ["clientes", "reunião", "parceria"],
-      date: "2024-03-05"
-    },
-    {
-      id: 11,
-      src: "/images/gallery/innovacao-1.jpg",
-      alt: "Laboratório de pesquisa e inovação",
-      category: "Inovação",
-      tags: ["inovação", "pesquisa", "laboratório"],
-      date: "2024-03-10"
-    },
-    {
-      id: 12,
-      src: "/images/gallery/certificacao-1.jpg",
-      alt: "Certificações e premiações",
-      category: "Certificações",
-      tags: ["certificação", "qualidade", "prêmios"],
-      date: "2024-03-15"
-    },
-    {
-      id: 13,
-      src: "/images/gallery/evento-1.jpg",
-      alt: "Participação em feira internacional",
-      category: "Eventos",
-      tags: ["feira", "evento", "internacional"],
-      date: "2024-03-20"
-    },
-    {
-      id: 14,
-      src: "/images/gallery/projeto-1.jpg",
-      alt: "Projeto customizado para cliente",
-      category: "Projetos",
-      tags: ["projeto", "customizado", "solução"],
-      date: "2024-03-25"
-    },
-    {
-      id: 15,
-      src: "/images/gallery/expansao-1.jpg",
-      alt: "Workshop de expansão de capacidade",
-      category: "Capacitação",
-      tags: ["workshop", "expansão", "capacitação"],
-      date: "2024-04-01"
-    },
-    {
-      id: 16,
-      src: "/images/gallery/sustentabilidade-1.jpg",
-      alt: "Projetos de sustentabilidade ambiental",
-      category: "Sustentabilidade",
-      tags: ["sustentabilidade", "meio-ambiente", "ecológico"],
-      date: "2024-04-05"
-    },
-    {
-      id: 17,
-      src: "/images/gallery/seguranca-1.jpg",
-      alt: "Treinamento de segurança no trabalho",
-      category: "Segurança",
-      tags: ["segurança", "treinamento", "epi"],
-      date: "2024-04-10"
-    },
-    {
-      id: 18,
-      src: "/images/gallery/desenvolvimento-1.jpg",
-      alt: "Programa de desenvolvimento contínuo",
-      category: "Desenvolvimento",
-      tags: ["desenvolvimento", "crescimento", "aprendizado"],
-      date: "2024-04-15"
-    }
-  ];
-
   // Filtra imagens por categoria
   const filteredImages = selectedCategory === 'Todas' 
     ? galleryImages 
     : galleryImages.filter(img => img.category === selectedCategory);
 
-  // Calcula paginação
+  // Calcula a paginação
   const totalPages = Math.ceil(filteredImages.length / imagesPerPage);
   const startIndex = (currentPage - 1) * imagesPerPage;
   const currentImages = filteredImages.slice(startIndex, startIndex + imagesPerPage);
@@ -268,7 +112,7 @@ const Gallery: React.FC = () => {
             ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
             : "space-y-6 mb-8"
         }>
-          {currentImages.map((image, index) => (
+          {currentImages.map((image, _) => (
             <div 
               key={image.id}
               className={`group relative bg-white rounded-lg shadow-sm overflow-hidden cursor-pointer transform transition-all duration-300 hover:shadow-lg ${
@@ -284,12 +128,17 @@ const Gallery: React.FC = () => {
                   ? 'aspect-w-16 aspect-h-12' 
                   : 'w-48 h-32 flex-shrink-0'
               } bg-gradient-to-br from-blue-100 to-gray-100 flex items-center justify-center`}>
-                <div className="text-center">
-                  <div className="bg-blue-500 text-white rounded-full p-3 mx-auto mb-2">
-                    <Filter className="h-6 w-6" />
+                { viewMode !== 'grid' && image.src ?
+                (
+                  <img src={image.src} alt={image.alt} className="h-full w-full object-cover rounded-lg" />
+                ) : (
+                  <div className="text-center">
+                    <div className="bg-blue-500 text-white rounded-full p-3 mx-auto mb-2">
+                      <Filter className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs text-gray-500">Imagem {image.id}</span>
                   </div>
-                  <span className="text-xs text-gray-500">Imagem {image.id}</span>
-                </div>
+                )}
               </div>
 
               {/* Informações */}
@@ -320,6 +169,7 @@ const Gallery: React.FC = () => {
               {/* Overlay no hover (apenas grid) */}
               {viewMode === 'grid' && (
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                  <img src={image.src} alt={image.alt} className="absolute w-full h-full object-cover trasition-all duration-300 ease-in-outhover:scale-110 hover:opacity-50" />
                   <div className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-center">
                     <p className="font-semibold">Clique para ampliar</p>
                   </div>
@@ -396,13 +246,18 @@ const Gallery: React.FC = () => {
           </button>
 
           <div className="max-w-4xl max-h-full w-full">
-            <div className="bg-gradient-to-br from-blue-100 to-gray-100 w-full h-96 lg:h-[500px] flex items-center justify-center rounded-lg mb-4">
-              <div className="text-center">
-                <div className="bg-blue-500 text-white rounded-full p-4 mx-auto mb-4">
-                  <Filter className="h-8 w-8" />
-                </div>
-                <p className="text-gray-600">Imagem {galleryImages[selectedImage].id}</p>
-              </div>
+            <div className="bg-gradient-to-br from-blue-100 to-gray-100 w-full h-96 lg:h-[500px] flex items-center justify-center rounded-lg mb-4 p-1">
+                { galleryImages[selectedImage].src ? 
+                (
+                  <img src={galleryImages[selectedImage].src} alt={galleryImages[selectedImage].alt} className="h-full w-full object-cover rounded-lg" />
+                ) : (
+                  <div className="text-center">
+                    <div className="bg-blue-500 text-white rounded-full p-4 mx-auto mb-4">
+                      <Filter className="h-8 w-8" />
+                    </div>
+                    <p className="text-gray-600">Imagem {galleryImages[selectedImage].id}</p>
+                  </div>
+                )}
             </div>
             
             <div className="bg-white rounded-lg p-6">
