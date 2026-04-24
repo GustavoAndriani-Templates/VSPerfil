@@ -12,6 +12,7 @@ import {
   ChevronRight,
   X
 } from 'lucide-react';
+import { galleryImages } from '../data/gallery';
 
 interface HomeProps {
   featuredMachines: Machinery[];
@@ -54,46 +55,6 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
     }
   ];
 
-  // Dados da galeria
-  const galleryImages = [
-    {
-      id: 1,
-      src: "/images/gallery/fabrica-1.jpg",
-      alt: "Nossa fábrica - área de produção",
-      category: "Instalações"
-    },
-    {
-      id: 2,
-      src: "/images/gallery/equipamento-1.jpg",
-      alt: "Máquina de corte em operação",
-      category: "Equipamentos"
-    },
-    {
-      id: 3,
-      src: "/images/gallery/equipe-1.jpg",
-      alt: "Nossa equipe técnica especializada",
-      category: "Equipe"
-    },
-    {
-      id: 4,
-      src: "/images/gallery/instalacao-1.jpg",
-      alt: "Processo de instalação em cliente",
-      category: "Instalações"
-    },
-    {
-      id: 5,
-      src: "/images/gallery/treinamento-1.jpg",
-      alt: "Sessão de treinamento técnico",
-      category: "Treinamento"
-    },
-    {
-      id: 6,
-      src: "/images/gallery/qualidade-1.jpg",
-      alt: "Controle de qualidade dos equipamentos",
-      category: "Qualidade"
-    }
-  ];
-
   const nextImage = () => {
     if (selectedImage !== null) {
       setSelectedImage((selectedImage + 1) % galleryImages.length);
@@ -105,6 +66,11 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
       setSelectedImage((selectedImage - 1 + galleryImages.length) % galleryImages.length);
     }
   };
+
+  const homeImages = [];
+  for (let i = 0; i < 6; i++) {
+    homeImages.push(galleryImages[i]);
+  }
 
   return (
     <div className="min-h-screen">
@@ -240,7 +206,7 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
+            {homeImages.map((image, index) => (
               <div 
                 key={image.id}
                 className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-transform duration-300 hover:scale-105"
@@ -252,6 +218,7 @@ const Home: React.FC<HomeProps> = ({ featuredMachines }) => {
                   </div>
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                  <img src={image.src} alt={image.alt} className="absolute w-full h-full object-cover trasition-all duration-300 ease-in-outhover:scale-110 hover:opacity-50" />
                   <div className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-center">
                     <p className="font-semibold">{image.category}</p>
                     <p className="text-sm">{image.alt}</p>

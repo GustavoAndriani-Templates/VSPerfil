@@ -169,7 +169,7 @@ const Gallery: React.FC = () => {
               {/* Overlay no hover (apenas grid) */}
               {viewMode === 'grid' && (
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                  <img src={image.src} alt={image.alt} className="absolute w-full h-full object-cover" />
+                  <img src={image.src} alt={image.alt} className="absolute w-full h-full object-cover trasition-all duration-300 ease-in-outhover:scale-110 hover:opacity-50" />
                   <div className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 text-center">
                     <p className="font-semibold">Clique para ampliar</p>
                   </div>
