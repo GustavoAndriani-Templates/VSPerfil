@@ -17,15 +17,14 @@ const MachineCard: React.FC<MachineCardProps> = ({ machine }) => {
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
         <div className="absolute top-4 left-4">
-          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-            machine.category === 'cutting' 
+          <span className={`px-3 py-1 rounded-full text-sm font-medium ${machine.category === 'cutting'
               ? 'bg-red-100 text-red-800'
               : machine.category === 'bending'
-              ? 'bg-blue-100 text-blue-800'
-              : 'bg-purple-100 text-purple-800'
-          }`}>
-            {machine.category === 'cutting' ? 'Corte' : 
-             machine.category === 'bending' ? 'Dobra' : 'Combinada'}
+                ? 'bg-blue-100 text-blue-800'
+                : 'bg-purple-100 text-purple-800'
+            }`}>
+            {machine.category === 'cutting' ? 'Corte' :
+              machine.category === 'bending' ? 'Dobra' : 'Combinada'}
           </span>
         </div>
       </div>
@@ -33,7 +32,7 @@ const MachineCard: React.FC<MachineCardProps> = ({ machine }) => {
       <div className="p-6">
         <h3 className="text-xl font-bold text-gray-900 mb-2">{machine.name}</h3>
         <p className="text-gray-600 mb-4">{machine.shortDescription}</p>
-        
+
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
             <Ruler className="h-4 w-4 text-blue-600" />

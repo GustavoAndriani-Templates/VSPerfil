@@ -1,8 +1,7 @@
-export interface Machinery {
+export interface Products {
   id: string;
   name: string;
-  model: string;
-  category: 'cutting' | 'bending' | 'both';
+  category: 'corte' | 'dobra' | 'ambos';
   shortDescription: string;
   fullDescription: string;
   image: string;
@@ -14,11 +13,6 @@ export interface Machinery {
       height: number;
     };
     weight: number;
-    voltage: string;
-    power: string;
-    workingCapacity: string;
-    precision: string;
-    productionRate: string;
   };
   features: string[];
   technicalDetails: {
