@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import Machines from './pages/Machines';
+import Products from './pages/Products';
 import MachineDetails from './components/machines/MachineDetails';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
@@ -34,17 +34,17 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <ScrollToTop />
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home featuredMachines={machinesData} />} 
+            <Route
+              path="/"
+              element={<Home featuredProducts={machinesData} />}
             />
-            <Route 
-              path="/machines" 
-              element={<Machines machines={machinesData} />} 
+            <Route
+              path="/products"
+              element={<Products products={machinesData} />}
             />
-            <Route 
-              path="/machines/:id" 
-              element={<MachineDetails machines={machinesData} />} 
+            <Route
+              path="/products/:id"
+              element={<MachineDetails machines={machinesData} />}
             />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />

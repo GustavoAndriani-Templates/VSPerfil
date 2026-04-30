@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
   const navigation = [
     { name: 'Início', href: '/' },
-    { name: 'Máquinas', href: '/machines' },
+    { name: 'Produtos', href: '/products' },
     { name: 'Galeria', href: '/gallery' },
     { name: 'Sobre', href: '/about' },
     { name: 'Contato', href: '/contact' }
@@ -35,11 +35,10 @@ const Header: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === item.href
+                className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${location.pathname === item.href
                     ? 'text-blue-600 border-b-2 border-blue-600'
                     : 'text-gray-700 hover:text-blue-600'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -63,11 +62,10 @@ const Header: React.FC = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 text-base font-medium ${
-                    location.pathname === item.href
+                  className={`px-3 py-2 text-base font-medium ${location.pathname === item.href
                       ? 'text-blue-600 bg-blue-50'
                       : 'text-gray-700 hover:text-blue-600'
-                  }`}
+                    }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

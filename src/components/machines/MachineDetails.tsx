@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Machinery } from '../../types/machinery';
-import { 
+import { Products } from '../../types/product';
+import {
   Ruler,
-  Zap, 
-  Calendar, 
+  Zap,
+  Calendar,
   ArrowLeft,
   Target,
   Shield,
   Dumbbell
 } from 'lucide-react';
 
-interface MachineDetailsProps {
-  machines: Machinery[];
+interface productDetailsProps {
+  products: Products[];
 }
 
-const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
+const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
-  
-  const machine = machines.find(m => m.id === id);
 
-  if (!machine) {
+  const product = products.find(m => m.id === id);
+
+  if (!product) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Máquina não encontrada</h2>
-          <Link to="/machines" className="text-blue-600 hover:text-blue-700">
+          <Link to="/products" className="text-blue-600 hover:text-blue-700">
             Voltar para a lista de máquinas
           </Link>
         </div>
@@ -39,8 +39,8 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="mb-8">
-          <Link 
-            to="/machines" 
+          <Link
+            to="/products"
             className="flex items-center text-blue-600 hover:text-blue-700 mb-4"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -54,23 +54,22 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
             <div>
               <div className="rounded-lg overflow-hidden mb-4">
                 <img
-                  src={machine.gallery?.[selectedImage] || machine.image}
-                  alt={machine.name}
+                  src={product.gallery?.[selectedImage] || product.image}
+                  alt={product.name}
                   className="w-full h-96 object-cover"
                 />
               </div>
               <div className="grid grid-cols-4 gap-2">
-                {[machine.image, ...(machine.gallery || [])].map((img, index) => (
+                {[product.image, ...(product.gallery || [])].map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`rounded-md overflow-hidden border-2 ${
-                      selectedImage === index ? 'border-blue-600' : 'border-gray-300'
-                    }`}
+                    className={`rounded-md overflow-hidden border-2 ${selectedImage === index ? 'border-blue-600' : 'border-gray-300'
+                      }`}
                   >
                     <img
                       src={img}
-                      alt={`${machine.name} ${index + 1}`}
+                      alt={`${product.name} ${index + 1}`}
                       className="w-full h-20 object-cover"
                     />
                   </button>
@@ -81,19 +80,18 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
             {/* Product Info */}
             <div>
               <div className="mb-6">
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${
-                  machine.category === 'cutting' 
+                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${product.category === 'cutting'
                     ? 'bg-red-100 text-red-800'
-                    : machine.category === 'bending'
-                    ? 'bg-blue-100 text-blue-800'
-                    : 'bg-purple-100 text-purple-800'
-                }`}>
-                  {machine.category === 'cutting' ? 'Máquina de Corte' : 
-                   machine.category === 'bending' ? 'Máquina de Dobra' : 'Máquina Combinada'}
+                    : product.category === 'bending'
+                      ? 'bg-blue-100 text-blue-800'
+                      : 'bg-purple-100 text-purple-800'
+                  }`}>
+                  {product.category === 'cutting' ? 'Máquina de Corte' :
+                    product.category === 'bending' ? 'Máquina de Dobra' : 'Máquina Combinada'}
                 </span>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{machine.name}</h1>
-                <p className="text-xl text-gray-600 mb-4">{machine.model}</p>
-                <p className="text-gray-700 leading-relaxed">{machine.fullDescription}</p>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                <p className="text-xl text-gray-600 mb-4">{product.model}</p>
+                <p className="text-gray-700 leading-relaxed">{product.fullDescription}</p>
               </div>
 
               {/* Key Specifications */}
@@ -103,7 +101,7 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
                   <div>
                     <p className="text-sm text-gray-600">Dimensões</p>
                     <p className="font-semibold">
-                      {machine.specifications.dimensions.length} × {machine.specifications.dimensions.width} × {machine.specifications.dimensions.height}mm
+                      {product.specifications.dimensions.length} × {product.specifications.dimensions.width} × {product.specifications.dimensions.height}mm
                     </p>
                   </div>
                 </div>
@@ -111,21 +109,21 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
                   <Dumbbell className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Peso</p>
-                    <p className="font-semibold">{machine.specifications.weight} kg</p>
+                    <p className="font-semibold">{product.specifications.weight} kg</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                   <Zap className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Voltagem</p>
-                    <p className="font-semibold">{machine.specifications.voltage}</p>
+                    <p className="font-semibold">{product.specifications.voltage}</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                   <Target className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Precisão</p>
-                    <p className="font-semibold">{machine.specifications.precision}</p>
+                    <p className="font-semibold">{product.specifications.precision}</p>
                   </div>
                 </div>
               </div>
@@ -133,17 +131,17 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
               {/* Price and Delivery */}
               <div className="border-t border-gray-200 pt-6">
                 <div className="flex items-center justify-between mb-4">
-                  {machine.priceRange && (
+                  {product.priceRange && (
                     <div>
                       <p className="text-sm text-gray-600">Investimento</p>
-                      <p className="text-2xl font-bold text-blue-600">{machine.priceRange}</p>
+                      <p className="text-2xl font-bold text-blue-600">{product.priceRange}</p>
                     </div>
                   )}
                   <div className="text-right">
                     <p className="text-sm text-gray-600">Prazo de Entrega</p>
                     <p className="text-lg font-semibold flex items-center justify-end">
                       <Calendar className="h-5 w-5 mr-2 text-green-600" />
-                      {machine.deliveryTime}
+                      {product.deliveryTime}
                     </p>
                   </div>
                 </div>
@@ -158,7 +156,7 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
           <div className="border-t border-gray-200">
             <div className="p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Especificações Técnicas</h2>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Technical Details */}
                 <div>
@@ -167,7 +165,7 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
                     Características Técnicas
                   </h3>
                   <div className="space-y-3">
-                    {Object.entries(machine.technicalDetails).map(([key, value]) => (
+                    {Object.entries(product.technicalDetails).map(([key, value]) => (
                       <div key={key} className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-600">{key}:</span>
                         <span className="font-semibold">{value}</span>
@@ -183,7 +181,7 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
                     Funcionalidades
                   </h3>
                   <ul className="space-y-2">
-                    {machine.features.map((feature, index) => (
+                    {product.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                         <span className="text-gray-700">{feature}</span>
@@ -200,4 +198,4 @@ const MachineDetails: React.FC<MachineDetailsProps> = ({ machines }) => {
   );
 };
 
-export default MachineDetails;
+export default productDetails;
