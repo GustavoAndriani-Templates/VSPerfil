@@ -8,7 +8,7 @@ import MachineDetails from './components/machines/MachineDetails';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import { machinesData } from './data/machines';
+import { productsData } from './data/machines';
 import './styles/globals.css';
 
 export const ScrollToTop = () => {
@@ -36,15 +36,15 @@ const App: React.FC = () => {
           <Routes>
             <Route
               path="/"
-              element={<Home featuredProducts={machinesData} />}
+              element={<Home featuredProducts={productsData} />}
             />
             <Route
               path="/products"
-              element={<Products products={machinesData} />}
+              element={<Products products={productsData} />}
             />
             <Route
               path="/products/:id"
-              element={<MachineDetails machines={machinesData} />}
+              element={<MachineDetails machines={productsData} />}
             />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />

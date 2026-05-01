@@ -1,33 +1,32 @@
 import React, { useState, useMemo } from 'react';
-import { Products } from '../types/products.ts';
-import MachineCard from '../components/machines/MachineCard';
 import { Search, Filter } from 'lucide-react';
+import ProductCard from '../components/machines/ProductCard.tsx';
+import { Products } from '../types/products.ts';
 
 interface ProductsProps {
-  producst: Products[];
+  products: Products[];
 }
 
-const Machines: React.FC<ProductsProps> = ({ products: Products[] }) => {
+const ProductsPage: React.FC<ProductsProps> = ({ products: Products }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<'todos' | 'corte' | 'dobra' | 'ambos'>('todos');
 
   const filteredProducts = useMemo(() => {
-    return products.filter(product => {
+    return Products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        product.model.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'todos' || product.category === selectedCategory;
 
       return matchesSearch && matchesCategory;
     });
-  }, [product, searchTerm, selectedCategory]);
+  }, [Products, searchTerm, selectedCategory]);
 
   const categories = [
-    { value: 'todos', label: 'Todos os Produtos', count: products.length },
-    { value: 'corte', label: 'Corte', count: products.filter(m => m.category === 'corte').length },
-    { value: 'dobra', label: 'Dobra', count: products.filter(m => m.category === 'dobra').length },
-    { value: 'ambos', label: 'Combinadas', count: products.filter(m => m.category === 'ambos').length }
+    { value: 'todos', label: 'Todos os Produtos', count: Products.length },
+    { value: 'corte', label: 'Corte', count: Products.filter(m => m.category === 'corte').length },
+    { value: 'dobra', label: 'Dobra', count: Products.filter(m => m.category === 'dobra').length },
+    { value: 'ambos', label: 'Combinadas', count: Products.filter(m => m.category === 'ambos').length }
   ];
 
   return (
@@ -86,10 +85,10 @@ const Machines: React.FC<ProductsProps> = ({ products: Products[] }) => {
         </div>
 
         {/* Machines Grid */}
-        {filteredMachines.length > 0 ? (
+        {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product) => (
-              <MachineCard key={product.id} machine={product} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
@@ -99,7 +98,7 @@ const Machines: React.FC<ProductsProps> = ({ products: Products[] }) => {
               <button
                 onClick={() => {
                   setSearchTerm('');
-                  setSelectedCategory('all');
+                  setSelectedCategory('todos');
                 }}
                 className="text-blue-600 hover:text-blue-700 font-medium"
               >
@@ -113,4 +112,4 @@ const Machines: React.FC<ProductsProps> = ({ products: Products[] }) => {
   );
 };
 
-export default Machines;
+export default ProductsPage;

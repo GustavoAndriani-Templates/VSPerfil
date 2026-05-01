@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Ruler, Zap, Calendar, Dumbbell } from '@vitejs/plugin-react';
+// import { Ruler, Calendar, Dumbbell } from '@vitejs/plugin-react';
 import { Products } from '../../types/products';
 
-interface ProductCardProps {
+interface productCardProps {
   product: Products;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<productCardProps> = ({ product }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <div className="relative h-64 overflow-hidden">
@@ -35,19 +35,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Ruler className="h-4 w-4 text-blue-600" />
+            {/*a<Ruler className="h-4 w-4 text-blue-600" />*/}
             <span>{product.specifications.dimensions.length}x{product.specifications.dimensions.width}mm</span>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Dumbbell className="h-4 w-4 text-blue-600" />
+            {/*<Dumbbell className="h-4 w-4 text-blue-600" />*/}
             <span>{product.specifications.weight}kg</span>
           </div>
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Zap className="h-4 w-4 text-blue-600" />
-            <span>{product.specifications.voltage}</span>
-          </div>
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Calendar className="h-4 w-4 text-blue-600" />
+            {/*<Calendar className="h-4 w-4 text-blue-600" />*/}
             <span>{product.deliveryTime}</span>
           </div>
         </div>
@@ -59,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </span>
           )}
           <Link
-            to={`/products/${product.id}`}
+            to={`/product/${product.id}`}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
           >
             Ver Detalhes

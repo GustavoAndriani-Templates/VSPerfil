@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Products } from '../../types/product';
+import { Products } from '../../types/products';
 import {
   Ruler,
   Zap,
@@ -81,10 +81,10 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
             <div>
               <div className="mb-6">
                 <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${product.category === 'cutting'
-                    ? 'bg-red-100 text-red-800'
-                    : product.category === 'bending'
-                      ? 'bg-blue-100 text-blue-800'
-                      : 'bg-purple-100 text-purple-800'
+                  ? 'bg-red-100 text-red-800'
+                  : product.category === 'bending'
+                    ? 'bg-blue-100 text-blue-800'
+                    : 'bg-purple-100 text-purple-800'
                   }`}>
                   {product.category === 'cutting' ? 'Máquina de Corte' :
                     product.category === 'bending' ? 'Máquina de Dobra' : 'Máquina Combinada'}
@@ -165,7 +165,7 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
                     Características Técnicas
                   </h3>
                   <div className="space-y-3">
-                    {Object.entries(product.technicalDetails).map(([key, value]) => (
+                    {Object.entries(product.technicalDetails).map(([key, value]: [number, string]) => (
                       <div key={key} className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-600">{key}:</span>
                         <span className="font-semibold">{value}</span>
@@ -181,7 +181,7 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
                     Funcionalidades
                   </h3>
                   <ul className="space-y-2">
-                    {product.features.map((feature, index) => (
+                    {product.features.map((feature: any, index: any) => (
                       <li key={index} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                         <span className="text-gray-700">{feature}</span>

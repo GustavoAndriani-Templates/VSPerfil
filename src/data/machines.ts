@@ -1,11 +1,11 @@
-import { Machinery } from '../types/machinery';
+import { Products } from "../types/products";
 
-export const machinesData: Machinery[] = [
+
+export const productsData: Products[] = [
   {
     id: '1',
     name: 'Cortadora CNC de Alta Precisão',
-    model: 'CMC-5000',
-    category: 'cutting',
+    category: 'corte',
     shortDescription: 'Máquina de corte CNC para metalon galvanizado com precisão milimétrica',
     fullDescription: 'A cortadora CNC CMC-5000 é equipada com tecnologia de ponta para corte preciso de metalon galvanizado. Com sistema de controle numérico computadorizado, oferece repetibilidade excepcional e alta produtividade.',
     image: '/images/cnc-cutter.jpg',
@@ -21,11 +21,6 @@ export const machinesData: Machinery[] = [
         height: 1800
       },
       weight: 4500,
-      voltage: '380V trifásico',
-      power: '15kW',
-      workingCapacity: '5000x2000mm',
-      precision: '±0.1mm',
-      productionRate: '120 cortes/hora'
     },
     features: [
       'Controle CNC avançado',
@@ -47,8 +42,7 @@ export const machinesData: Machinery[] = [
   {
     id: '2',
     name: 'Cortadora CNC de Alta Precisão',
-    model: 'CMC-5000',
-    category: 'cutting',
+    category: 'corte',
     shortDescription: 'Máquina de corte CNC para metalon galvanizado com precisão milimétrica',
     fullDescription: 'A cortadora CNC CMC-5000 é equipada com tecnologia de ponta para corte preciso de metalon galvanizado. Com sistema de controle numérico computadorizado, oferece repetibilidade excepcional e alta produtividade.',
     image: '/images/cnc-cutter.jpg',
@@ -64,11 +58,6 @@ export const machinesData: Machinery[] = [
         height: 1800
       },
       weight: 4500,
-      voltage: '380V trifásico',
-      power: '15kW',
-      workingCapacity: '5000x2000mm',
-      precision: '±0.1mm',
-      productionRate: '120 cortes/hora'
     },
     features: [
       'Controle CNC avançado',
@@ -90,8 +79,7 @@ export const machinesData: Machinery[] = [
   {
     id: '3',
     name: 'Cortadora CNC de Alta Precisão',
-    model: 'CMC-5000',
-    category: 'cutting',
+    category: 'corte',
     shortDescription: 'Máquina de corte CNC para metalon galvanizado com precisão milimétrica',
     fullDescription: 'A cortadora CNC CMC-5000 é equipada com tecnologia de ponta para corte preciso de metalon galvanizado. Com sistema de controle numérico computadorizado, oferece repetibilidade excepcional e alta produtividade.',
     image: '/images/cnc-cutter.jpg',
@@ -107,11 +95,6 @@ export const machinesData: Machinery[] = [
         height: 1800
       },
       weight: 4500,
-      voltage: '380V trifásico',
-      power: '15kW',
-      workingCapacity: '5000x2000mm',
-      precision: '±0.1mm',
-      productionRate: '120 cortes/hora'
     },
     features: [
       'Controle CNC avançado',
@@ -133,8 +116,7 @@ export const machinesData: Machinery[] = [
   {
     id: '4',
     name: 'Dobradeira Hidráulica CNC',
-    model: 'DHB-3000',
-    category: 'bending',
+    category: 'dobra',
     shortDescription: 'Dobradeira hidráulica com controle CNC para dobros precisos em metalon',
     fullDescription: 'A dobradeira hidráulica DHB-3000 oferece flexibilidade e precisão no processo de dobra de metalon galvanizado. Com sistema CNC Yaskawa, garante ângulos consistentes e repetibilidade.',
     image: '/images/hydraulic-bender.jpg',
@@ -150,11 +132,6 @@ export const machinesData: Machinery[] = [
         height: 2200
       },
       weight: 6800,
-      voltage: '440V trifásico',
-      power: '22kW',
-      workingCapacity: '3000x120mm',
-      precision: '±0.1°',
-      productionRate: '80 dobros/hora'
     },
     features: [
       'Controle Yaskawa CNC',
