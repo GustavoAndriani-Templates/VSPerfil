@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
                 <div className="space-y-2 text-gray-600">
                   <p>Segunda a Sexta: 07:00 às 11:30 <br/> 13:00 às 17:18</p>
                   <p>Sábados e Domingos: Fechado</p>
-                  <p>Plantão Técnico: 24/7</p>
+                  {/* <p>Plantão Técnico: 24/7</p> */}
                 </div>
               </div>
             </div>
