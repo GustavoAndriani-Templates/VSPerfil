@@ -185,7 +185,7 @@ const Gallery: React.FC = () => {
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+              className="p-2 rounded-lg border border-gray-300 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -194,7 +194,7 @@ const Gallery: React.FC = () => {
               <button
                 key={page}
                 onClick={() => handlePageChange(page)}
-                className={`px-4 py-2 rounded-lg border ${
+                className={`px-4 py-2 rounded-lg border hover:cursor-pointer ${
                   currentPage === page
                     ? 'bg-blue-600 text-white border-blue-600'
                     : 'border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -207,7 +207,7 @@ const Gallery: React.FC = () => {
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="p-2 rounded-lg border border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+              className="p-2 rounded-lg border border-gray-300 hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
