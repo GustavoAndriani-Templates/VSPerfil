@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Products } from '../types/products';
-import ProductCard from '../components/machines/ProductCard';
+import ProductCard from '../components/products/ProductCard';
 import {
   Factory,
   Shield,

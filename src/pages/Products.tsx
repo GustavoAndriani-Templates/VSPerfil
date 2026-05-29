@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Filter } from 'lucide-react';
-import ProductCard from '../components/machines/ProductCard.tsx';
+import ProductCard from '../components/products/ProductCard.tsx';
 import { Products } from '../types/products.ts';
 
 interface ProductsProps {
@@ -9,7 +9,7 @@ interface ProductsProps {
 
 const ProductsPage: React.FC<ProductsProps> = ({ products: Products }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<'todos' | 'corte' | 'dobra' | 'ambos'>('todos');
+  const [selectedCategory, setSelectedCategory] = useState<'todos' | 'quadrado' | 'redondo' | 'retangular'>('todos');
 
   const filteredProducts = useMemo(() => {
     return Products.filter(product => {
@@ -24,9 +24,9 @@ const ProductsPage: React.FC<ProductsProps> = ({ products: Products }) => {
 
   const categories = [
     { value: 'todos', label: 'Todos os Produtos', count: Products.length },
-    { value: 'corte', label: 'Corte', count: Products.filter(m => m.category === 'corte').length },
-    { value: 'dobra', label: 'Dobra', count: Products.filter(m => m.category === 'dobra').length },
-    { value: 'ambos', label: 'Combinadas', count: Products.filter(m => m.category === 'ambos').length }
+    { value: 'quadrado', label: 'Quadrado', count: Products.filter(m => m.category === 'quadrado').length },
+    { value: 'redondo', label: 'Redondo', count: Products.filter(m => m.category === 'redondo').length },
+    { value: 'retangular', label: 'Retangular', count: Products.filter(m => m.category === 'retangular').length }
   ];
 
   return (

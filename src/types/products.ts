@@ -1,7 +1,7 @@
 export interface Products {
   id: string;
   name: string;
-  category: 'corte' | 'dobra' | 'ambos';
+  category: 'redondo' | 'quadrado' | 'retangular';
   shortDescription: string;
   fullDescription: string;
   image: string;
@@ -9,15 +9,15 @@ export interface Products {
   specifications: {
     dimensions: {
       length: number;
-      width: number;
-      height: number;
+      width?: number;
+      height: number | string;
     };
-    weight: number;
+    weight?: number;
   };
-  features: string[];
+  features?: string[];
   technicalDetails: {
     [key: string]: string;
   };
   priceRange?: string;
-  deliveryTime: string;
+  deliveryTime?: string;
 }

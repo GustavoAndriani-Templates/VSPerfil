@@ -4,12 +4,12 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import MachineDetails from './components/machines/MachineDetails';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import { productsData } from './data/machines';
-import './styles/globals.css';
+import { productsData } from './data/products';
+import ProductDetails from './components/products/ProductDetails';
+// import './styles/globals.css';
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -43,8 +43,8 @@ const App: React.FC = () => {
               element={<Products products={productsData} />}
             />
             <Route
-              path="/products/:id"
-              element={<MachineDetails machines={productsData} />}
+              path="/product/:id"
+              element={<ProductDetails products={productsData} />}
             />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />

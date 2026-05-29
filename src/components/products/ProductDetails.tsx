@@ -11,11 +11,11 @@ import {
   Dumbbell
 } from 'lucide-react';
 
-interface productDetailsProps {
+interface ProductDetailsProps {
   products: Products[];
 }
 
-const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
+const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -80,17 +80,17 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
             {/* Product Info */}
             <div>
               <div className="mb-6">
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${product.category === 'cutting'
+                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${product.category === 'redondo'
                   ? 'bg-red-100 text-red-800'
-                  : product.category === 'bending'
+                  : product.category === 'quadrado'
                     ? 'bg-blue-100 text-blue-800'
                     : 'bg-purple-100 text-purple-800'
                   }`}>
-                  {product.category === 'cutting' ? 'Máquina de Corte' :
-                    product.category === 'bending' ? 'Máquina de Dobra' : 'Máquina Combinada'}
+                  {product.category === 'redondo' ? 'Tubo Redondo' :
+                    product.category === 'quadrado' ? 'Tubo Quadrado' : 'Tubo Retangular'}
                 </span>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
-                <p className="text-xl text-gray-600 mb-4">{product.model}</p>
+                {/* <p className="text-xl text-gray-600 mb-4">{product.shortDescription}</p> */}
                 <p className="text-gray-700 leading-relaxed">{product.fullDescription}</p>
               </div>
 
@@ -100,19 +100,28 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
                   <Ruler className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Dimensões</p>
-                    <p className="font-semibold">
-                      {product.specifications.dimensions.length} × {product.specifications.dimensions.width} × {product.specifications.dimensions.height}mm
-                    </p>
+                    {typeof product.specifications.dimensions.height === 'string' ? (
+                      <p className="font-semibold">
+                        {product.specifications.dimensions.length} × {product.specifications.dimensions.width} {product.specifications.dimensions.height}
+                      </p>
+                    ) : (
+                      <p className="font-semibold">
+                        {product.specifications.dimensions.length} × {product.specifications.dimensions.width} × {product.specifications.dimensions.height}mm
+                      </p>
+                    )}
+
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Dumbbell className="h-6 w-6 text-blue-600" />
-                  <div>
-                    <p className="text-sm text-gray-600">Peso</p>
-                    <p className="font-semibold">{product.specifications.weight} kg</p>
+                {product.specifications.weight ? (
+                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <Dumbbell className="h-6 w-6 text-blue-600" />
+                    <div>
+                      <p className="text-sm text-gray-600">Peso</p>
+                      <p className="font-semibold">{product.specifications.weight} kg</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                ) : null}
+                {/* <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                   <Zap className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Voltagem</p>
@@ -125,7 +134,7 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
                     <p className="text-sm text-gray-600">Precisão</p>
                     <p className="font-semibold">{product.specifications.precision}</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Price and Delivery */}
@@ -155,17 +164,14 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
           {/* Detailed Specifications */}
           <div className="border-t border-gray-200">
             <div className="p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Especificações Técnicas</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Shield className="h-5 w-5 mr-2 text-blue-600" />Especificações Técnicas</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Technical Details */}
                 <div>
-                  <h3 className="text-lg font-semibold mb-4 flex items-center">
-                    <Shield className="h-5 w-5 mr-2 text-blue-600" />
-                    Características Técnicas
-                  </h3>
                   <div className="space-y-3">
-                    {Object.entries(product.technicalDetails).map(([key, value]: [number, string]) => (
+                    {Object.entries(product.technicalDetails).map(([key, value]: [string, string]) => (
                       <div key={key} className="flex justify-between py-2 border-b border-gray-100">
                         <span className="text-gray-600">{key}:</span>
                         <span className="font-semibold">{value}</span>
@@ -175,27 +181,29 @@ const productDetails: React.FC<ProductsDetailsProps> = ({ products }) => {
                 </div>
 
                 {/* Features */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4 flex items-center">
-                    <Target className="h-5 w-5 mr-2 text-blue-600" />
-                    Funcionalidades
-                  </h3>
-                  <ul className="space-y-2">
-                    {product.features.map((feature: any, index: any) => (
-                      <li key={index} className="flex items-center space-x-3">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {product.features ? (
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4 flex items-center">
+                      <Target className="h-5 w-5 mr-2 text-blue-600" />
+                      Funcionalidades
+                    </h3>
+                    <ul className="space-y-2">
+                      {product.features.map((feature: any, index: any) => (
+                        <li key={index} className="flex items-center space-x-3">
+                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
-export default productDetails;
+export default ProductDetails;
