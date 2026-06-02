@@ -282,7 +282,7 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
       )}
 
       {/* Categories Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -326,17 +326,17 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Machines */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Máquinas em Destaque
+              Produtos em Destaque
             </h2>
             <p className="text-xl text-gray-600">
-              Conheça nossos equipamentos mais populares
+              Conheça nossos produtos mais populares
             </p>
           </div>
 
@@ -351,7 +351,7 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
               to="/products"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
             >
-              Ver Todas as Máquinas
+              Ver Todos os Produtos
             </Link>
           </div>
         </div>

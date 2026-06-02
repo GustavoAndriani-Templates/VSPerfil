@@ -54,7 +54,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
             <div>
               <div className="rounded-lg overflow-hidden mb-4">
                 <img
-                  src={product.gallery?.[selectedImage] || product.image}
+                  src={
+                    selectedImage === 0
+                      ? product.image
+                      : product.gallery?.[selectedImage - 1]
+                  }
                   alt={product.name}
                   className="w-full h-96 object-cover"
                 />

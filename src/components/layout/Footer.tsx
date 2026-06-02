@@ -16,8 +16,7 @@ const Footer: React.FC = () => {
               <span className="text-sm text-gray-400">Tubo Galvanizado Ltda.</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Especialistas em importação de máquinas industriais de corte e dobra 
-              de metalon galvanizado. Tecnologia de ponta para sua indústria.
+              Especialistas em metalon galvanizado. Qualidade de primeira linha.
             </p>
             <div className="space-y-2 text-gray-400">
               <div className="flex items-center space-x-2">
