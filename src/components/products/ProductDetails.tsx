@@ -112,7 +112,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                         {product.specifications.dimensions.length} × {product.specifications.dimensions.width} × {product.specifications.dimensions.height}mm
                       </p>
                     )}
-
+                    <small>Também disponível em medidas personalizadas mediante consulta.</small>
                   </div>
                 </div>
                 {product.specifications.weight ? (

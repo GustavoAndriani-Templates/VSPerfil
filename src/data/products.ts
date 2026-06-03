@@ -18,7 +18,8 @@ export const productsData: Products[] = [
       dimensions: {
         length: 6000,
         width: 15,
-        height: 15
+        height: 15,
+        thickness: '0.6mm',
       },
     },
     technicalDetails: {
@@ -42,7 +43,8 @@ export const productsData: Products[] = [
       dimensions: {
         length: 6000,
         width: 1,
-        height: '1/8"'
+        height: '1/8"',
+        thickness: '0.6mm'
       },
     },
     technicalDetails: {
@@ -66,7 +68,8 @@ export const productsData: Products[] = [
     specifications: {
       dimensions: {
         length: 6000,
-        height: '3/4"'
+        height: '3/4"',
+        thickness: '0.6mm'
       },
     },
     technicalDetails: {
@@ -115,7 +118,8 @@ export const productsData: Products[] = [
     specifications: {
       dimensions: {
         length: 6000,
-        height: '3/4"'
+        height: '3/4"',
+        thickness: '0.6mm'
       },
     },
     technicalDetails: {
@@ -140,7 +144,8 @@ export const productsData: Products[] = [
       dimensions: {
         length: 6000,
         width: 30,
-        height: 20
+        height: 20,
+        thickness: '0.6mm'
       },
     },
     technicalDetails: {

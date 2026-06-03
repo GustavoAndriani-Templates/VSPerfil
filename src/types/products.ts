@@ -12,6 +12,7 @@ export interface Products {
       width?: number;
       height: number | string;
       thickness?: number | string;
+      custom?: boolean;
     };
     weight?: number;
   };
