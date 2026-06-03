@@ -24,9 +24,7 @@ export const productsData: Products[] = [
     technicalDetails: {
       'Composição do Feixe': '256 barras',
       'Espessura da Parede': '0.6mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+    }
   },
   {
     id: '2',
@@ -51,9 +49,7 @@ export const productsData: Products[] = [
       'Material': 'Aço Carbono',
       'Composição do Feixe': '??? barras',
       'Espessura da Parede': '0.4mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+    }
   },
   {
     id: '3',
@@ -77,13 +73,11 @@ export const productsData: Products[] = [
       'Material': 'Aço Carbono',
       'Composição do Amarrado': '271 barras',
       'Espessura da Parede': '0.6mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+    }
   },
   {
     id: '4',
-    name: 'Tubo Redondo 5/8" - Aço Carbono',
+    name: 'Tubo Redondo 5/8"',
     category: 'redondo',
     shortDescription: 'Tubo redondo de aço carbono, ideal para aplicações estruturais e projetos de construção civil',
     fullDescription: 'O tubo redondo de aço carbono é fabricado com aço de alta qualidade e revestido com uma camada de zinco para proteção contra corrosão. Com diâmetro de 5/8", é perfeito para aplicações que exigem resistência e durabilidade, como estruturas metálicas, suportes, grades e projetos de construção civil. Sua superfície galvanizada garante longa vida útil mesmo em ambientes externos, tornando-o uma escolha confiável para diversos tipos de projetos.',
@@ -96,16 +90,15 @@ export const productsData: Products[] = [
     specifications: {
       dimensions: {
         length: 6000,
-        height: '5/8"'
+        height: '5/8"',
+        thickness: '0.4 à 1.2mm'
       },
     },
     technicalDetails: {
-      'Material': 'Aço Carbono',
+      'Material': 'Fina Frio',
       'Composição do Amarrado': '397 barras',
-      'Espessura da Parede': '0.6mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+      'Espessura da Parede': '0.4 à 1.2mm',
+    }
   },
   {
     id: '5',
@@ -129,9 +122,7 @@ export const productsData: Products[] = [
       'Material': 'Fina Frio',
       'Composição do Amarrado': '271 barras',
       'Espessura da Parede': '0.6mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+    }
   },
   {
     id: '10',
@@ -156,8 +147,6 @@ export const productsData: Products[] = [
       'Material': 'Aço Carbono',
       'Composição do Feixe': '224 barras',
       'Espessura da Parede': '0.6mm',
-    },
-    priceRange: 'R$ ??? - R$ ???',
-    deliveryTime: '??-?? dias'
+    }
   },
 ];
