@@ -7,7 +7,6 @@ import {
   Shield,
   Clock,
   TrendingUp,
-  Scissors,
   ChevronLeft,
   ChevronRight,
   X
