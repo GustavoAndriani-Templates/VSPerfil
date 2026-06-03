@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { Ruler, Calendar, Dumbbell } from '@vitejs/plugin-react';
 import { Products } from '../../types/products';
-import { Calendar, Ruler } from 'lucide-react';
+import { Calendar, Proportions, Ruler } from 'lucide-react';
 
 interface productCardProps {
   product: Products;
@@ -50,17 +50,17 @@ const ProductCard: React.FC<productCardProps> = ({ product }) => {
             </div>
           ) : null}
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <Calendar className="h-4 w-4 text-blue-600" />
-            <span>{product.deliveryTime}</span>
+            <Proportions className="h-4 w-4 text-blue-600" />
+            <span>{product.specifications.dimensions.thickness}</span>
           </div>
         </div>
 
         <div className="flex items-center justify-between">
-          {product.priceRange && (
+          {/* {product.priceRange && (
             <span className="text-lg font-bold text-blue-600">
               {product.priceRange}
             </span>
-          )}
+          )} */}
           <Link
             to={`/product/${product.id}`}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"

@@ -3,11 +3,11 @@ import { useParams, Link } from 'react-router-dom';
 import { Products } from '../../types/products';
 import {
   Ruler,
-  Calendar,
   ArrowLeft,
   Target,
   Shield,
-  Dumbbell
+  Dumbbell,
+  Proportions
 } from 'lucide-react';
 
 interface ProductDetailsProps {
@@ -112,7 +112,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                         {product.specifications.dimensions.length} × {product.specifications.dimensions.width} × {product.specifications.dimensions.height}mm
                       </p>
                     )}
-
+                    <small>Também disponível em medidas personalizadas mediante consulta.</small>
                   </div>
                 </div>
                 {product.specifications.weight ? (
@@ -121,6 +121,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                     <div>
                       <p className="text-sm text-gray-600">Peso</p>
                       <p className="font-semibold">{product.specifications.weight} kg</p>
+                    </div>
+                  </div>
+                ) : null}
+
+                {product.specifications.dimensions.thickness ? (
+                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                    <Proportions className="h-6 w-6 text-blue-600" />
+                    <div>
+                      <p className="text-sm text-gray-600">Espessura</p>
+                      <p className="font-semibold">{product.specifications.dimensions.thickness}</p>
                     </div>
                   </div>
                 ) : null}
@@ -143,7 +153,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
               {/* Price and Delivery */}
               <div className="border-t border-gray-200 pt-6">
                 <div className="flex items-center justify-between mb-4">
-                  {product.priceRange && (
+                  {/* {product.priceRange && (
                     <div>
                       <p className="text-sm text-gray-600">Investimento</p>
                       <p className="text-2xl font-bold text-blue-600">{product.priceRange}</p>
@@ -155,7 +165,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                       <Calendar className="h-5 w-5 mr-2 text-green-600" />
                       {product.deliveryTime}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
                   Solicitar Orçamento
