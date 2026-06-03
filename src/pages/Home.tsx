@@ -31,7 +31,7 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
     {
       year: "2013",
       title: "Primeira Parceria Internacional",
-      description: "Estabelecimento de parceria com fabricante alemã de equipamentos"
+      description: "Estabelecimento de parceria com fabricante chinesa de equipamentos"
     },
     {
       year: "2016",
@@ -83,7 +83,7 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
               <span className="text-blue-300">Alta Qualidade</span>
             </h1>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Soluções industriais especializadas em corte e dobra de metalon galvanizado. Tecnologia de ponta e processos automatizados para maximizar a produtividade e a qualidade dos seus projetos.
+              Soluções industriais especializadas em corte e dobra de metalon galvanizado. Tecnologia de ponta e processos automatizados para maximizar a produtividade e a qualidade dos nossos clientes.
             </p>
             <Link
               to="/machines"
@@ -114,9 +114,9 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
                 <Shield className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Garantia e Qualidade</h3>
-              <p className="text-gray-600">
+              {/* <p className="text-gray-600">
                 Todas as máquinas possuem certificação internacional e garantia de 2 anos
-              </p>
+              </p> */}
             </div>
 
             <div className="text-center p-6">
@@ -124,19 +124,19 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
                 <Clock className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Suporte Técnico</h3>
-              <p className="text-gray-600">
+              {/* <p className="text-gray-600">
                 Equipe especializada disponível 24/7 para suporte e manutenção
-              </p>
+              </p> */}
             </div>
 
             <div className="text-center p-6">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Factory className="h-8 w-8 text-purple-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Instalação Completa</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3">Tecnologia de Ponta</h3>
+              {/* <p className="text-gray-600">
                 Fornecemos instalação, treinamento e suporte pós-venda
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
