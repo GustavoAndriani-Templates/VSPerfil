@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { Products } from '../../types/products';
 import {
   Ruler,
-  Zap,
   Calendar,
   ArrowLeft,
   Target,
