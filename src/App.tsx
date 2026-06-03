@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import Machines from './pages/Machines';
-import MachineDetails from './components/machines/MachineDetails';
+import Products from './pages/Products';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import { machinesData } from './data/machines';
-import './styles/globals.css';
+import { productsData } from './data/products';
+import ProductDetails from './components/products/ProductDetails';
+// import './styles/globals.css';
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,17 +34,17 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <ScrollToTop />
           <Routes>
-            <Route 
-              path="/" 
-              element={<Home featuredMachines={machinesData} />} 
+            <Route
+              path="/"
+              element={<Home featuredProducts={productsData} />}
             />
-            <Route 
-              path="/machines" 
-              element={<Machines machines={machinesData} />} 
+            <Route
+              path="/products"
+              element={<Products products={productsData} />}
             />
-            <Route 
-              path="/machines/:id" 
-              element={<MachineDetails machines={machinesData} />} 
+            <Route
+              path="/product/:id"
+              element={<ProductDetails products={productsData} />}
             />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />

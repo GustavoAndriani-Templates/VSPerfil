@@ -4,7 +4,7 @@ import { GalleryImage } from "../types/galleryImage";
 export const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "/images/local-01.jpeg",
+    src: "/galleryImages/local-01.jpeg",
     alt: "Nossa sede - vista externa",
     category: "Fábrica",
     tags: ["localização", "prédio", "fábrica"],
@@ -12,7 +12,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 2,
-    src: "/images/local-02.jpeg",
+    src: "/galleryImages/local-02.jpeg",
     alt: "Nossa sede - vista externa",
     category: "Fábrica",
     tags: ["localização", "prédio", "fábrica"],
@@ -20,7 +20,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 3,
-    src: "/images/local-03.jpeg",
+    src: "/galleryImages/local-03.jpeg",
     alt: "Nossa sede - vista externa",
     category: "Fábrica",
     tags: ["localização", "prédio", "fábrica"],
@@ -28,7 +28,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 4,
-    src: "/images/prod-01.jpeg",
+    src: "/galleryImages/prod-01.jpeg",
     alt: "Nossa fábrica - área de produção principal",
     category: "Instalações",
     tags: ["fábrica", "produção", "instalações"],
@@ -36,7 +36,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 5,
-    src: "/images/prod-02.jpeg",
+    src: "/galleryImages/prod-02.jpeg",
     alt: "Nossa fábrica - área de produção principal",
     category: "Instalações",
     tags: ["fábrica", "produção", "instalações"],
@@ -44,7 +44,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 6,
-    src: "/images/prod-03.jpeg",
+    src: "/galleryImages/prod-03.jpeg",
     alt: "Nossa fábrica - área de produção principal",
     category: "Instalações",
     tags: ["fábrica", "produção", "instalações"],
@@ -52,7 +52,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 7,
-    src: "/images/produto-01.jpeg",
+    src: "/galleryImages/produto-01.jpeg",
     alt: "Estoque de produtos prontos para envio",
     category: "Estoque",
     tags: ["produtos", "cliente", "estoque"],
@@ -60,7 +60,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 8,
-    src: "/images/produto-02.jpeg",
+    src: "/galleryImages/produto-02.jpeg",
     alt: "Estoque de produtos prontos para envio",
     category: "Estoque",
     tags: ["produtos", "cliente", "estoque"],
@@ -68,7 +68,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 9,
-    src: "/images/materia-01.jpeg",
+    src: "/galleryImages/materia-01.jpeg",
     alt: "Matéria-prima de alta qualidade para produção",
     category: "Matéria-prima",
     tags: ["qualidade", "controle", "inspeção", "matéria-prima", "produção"],
@@ -76,7 +76,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 10,
-    src: "/images/materia-02.jpeg",
+    src: "/galleryImages/materia-02.jpeg",
     alt: "Matéria-prima de alta qualidade para produção",
     category: "Matéria-prima",
     tags: ["qualidade", "controle", "inspeção", "matéria-prima", "produção"],
@@ -84,7 +84,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 11,
-    src: "/images/exp-01.jpeg",
+    src: "/galleryImages/exp-01.jpeg",
     alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
     category: "Expansão",
     tags: ["expansão", "pesquisa", "fábrica", "projetos"],
@@ -92,7 +92,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 12,
-    src: "/images/exp-02.jpeg",
+    src: "/galleryImages/exp-02.jpeg",
     alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
     category: "Expansão",
     tags: ["expansão", "pesquisa", "fábrica", "projetos"],
@@ -100,7 +100,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: 13,
-    src: "/images/exp-03.jpeg",
+    src: "/galleryImages/exp-03.jpeg",
     alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
     category: "Expansão",
     tags: ["expansão", "pesquisa", "fábrica", "projetos"],

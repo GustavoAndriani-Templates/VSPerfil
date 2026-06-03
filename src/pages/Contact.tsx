@@ -13,8 +13,28 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+
+    const whatsappNumber = '5517981301284';
+
+    const text = `
+      *NOVO CONTATO PELO SITE*
+
+      *Nome:* ${formData.name}
+      *Empresa:* ${formData.company || 'Não informado'}
+      *Email:* ${formData.email}
+      *Telefone:* ${formData.phone || 'Não informado'}
+
+      *Assunto:* ${formData.subject}
+
+      *Mensagem:*
+      ${formData.message}
+    `;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      text
+    )}`;
+
+    window.open(url, '_blank');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -40,7 +60,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Phone className="h-6 w-6 text-blue-600 mt-1" />
@@ -75,9 +95,9 @@ const Contact: React.FC = () => {
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <h3 className="font-semibold text-gray-900 mb-4">Horário de Atendimento</h3>
                 <div className="space-y-2 text-gray-600">
-                  <p>Segunda a Sexta: 07:00 às 11:30 <br/> 13:00 às 17:18</p>
+                  <p>Segunda a Sexta: 07:00 às 11:30 <br /> 13:00 às 17:18</p>
                   <p>Sábados e Domingos: Fechado</p>
-                  <p>Plantão Técnico: 24/7</p>
+                  {/* <p>Plantão Técnico: 24/7</p> */}
                 </div>
               </div>
             </div>
@@ -87,7 +107,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Envie sua Mensagem</h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -164,11 +184,10 @@ const Contact: React.FC = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   >
                     <option value="">Selecione um assunto</option>
-                    <option value="orcamento">Solicitar Orçamento</option>
-                    <option value="informacoes">Mais Informações</option>
-                    <option value="suporte">Suporte Técnico</option>
-                    <option value="visita">Agendar Visita</option>
-                    <option value="outro">Outro</option>
+                    <option value="Orçamento">Solicitar Orçamento</option>
+                    <option value="Informações">Mais Informações</option>
+                    <option value="Agendar Visita">Agendar Visita</option>
+                    <option value="Outros">Outros (escreva abaixo)</option>
                   </select>
                 </div>
 

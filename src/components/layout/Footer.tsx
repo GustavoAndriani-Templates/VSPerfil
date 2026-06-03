@@ -16,8 +16,7 @@ const Footer: React.FC = () => {
               <span className="text-sm text-gray-400">Tubo Galvanizado Ltda.</span>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
-              Especialistas em importação de máquinas industriais de corte e dobra 
-              de metalon galvanizado. Tecnologia de ponta para sua indústria.
+              Especialistas em metalon galvanizado. Qualidade de primeira linha.
             </p>
             <div className="space-y-2 text-gray-400">
               <div className="flex items-center space-x-2">
@@ -40,18 +39,17 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="ml-auto">
             <h3 className="text-lg font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/machines" className="hover:text-white transition-colors">Máquinas</Link></li>
+              <li><Link to="/products" className="hover:text-white transition-colors">Produtos</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">Sobre Nós</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Contato</Link></li>
-              <li><Link to="/support" className="hover:text-white transition-colors">Suporte</Link></li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mb-4">Serviços</h3>
             <ul className="space-y-2 text-gray-400">
               <li>Importação</li>
@@ -60,11 +58,12 @@ const Footer: React.FC = () => {
               <li>Manutenção</li>
               <li>Peças de Reposição</li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; 2025 VS PERFIL TUBO GALVANIZADO LTDA. Todos os direitos reservados.</p>
+          <p>Desenvolvido por <a href="https://linktr.ee/gustavoandriani" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600 transition-colors">Gustavo Andriani</a></p>
         </div>
       </div>
     </footer>
