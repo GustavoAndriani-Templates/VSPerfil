@@ -36,7 +36,7 @@ const TableDimensions: React.FC<TableDimensionsProps> = ({ tableInfos }) => {
         </caption>
         <thead>
           <tr
-            className="bg-blue-700 text-white"
+            className="bg-blue-700 text-white text-center"
             style={{
               borderBottom: "2px solid #ddd",
             }}
@@ -52,7 +52,7 @@ const TableDimensions: React.FC<TableDimensionsProps> = ({ tableInfos }) => {
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-center">
           {dataSource.map((row, rowIndex) => (
             row.id % 2 == 0 ? (
             <tr key={rowIndex}>
