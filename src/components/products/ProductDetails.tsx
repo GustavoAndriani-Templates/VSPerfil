@@ -8,6 +8,7 @@ import {
   Shield,
   Dumbbell,
   Proportions,
+  Send,
 } from "lucide-react";
 import TableDimensions from "./TableDimensions";
 
@@ -35,8 +36,22 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
   const { id } = useParams<{ id: string }>();
   const [selectedImage, setSelectedImage] = useState(0);
   const [tableDimensions, setTableDimensions] = useState<TableInfosData>();
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const product = products.find((m) => m.id === id);
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    type: product!.category,
+    material: "",
+  });
+
+
+  const dominarRolagem = () => {
+    document
+      .getElementById("tabela-dimensoes")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const circleTableDimensions = {
@@ -333,6 +348,38 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
       setTableDimensions(squareTableDimensions);
   }, []);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const whatsappNumber = "5517981301284";
+    // const whatsappNumber = "5516996192224";
+
+    const text = `
+        *NOVA SOLICITAÇÃO DE ORÇAMENTO PELO SITE*
+  
+        *Nome:* ${formData.name}
+        *Tubo:* ${formData.type}
+        *Material:* ${formData.material}
+      `;
+
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      text,
+    )}`;
+
+    window.open(url, "_blank");
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   if (!product) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -428,55 +475,56 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
               </div>
 
               {/* Key Specifications */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Ruler className="h-6 w-6 text-blue-600" />
-                  <div>
-                    <p className="text-sm text-gray-600">Dimensões</p>
-                    {typeof product.specifications.dimensions.height ===
-                    "string" ? (
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.length} ×{" "}
-                        {product.specifications.dimensions.width}{" "}
-                        {product.specifications.dimensions.height}
-                      </p>
-                    ) : (
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.length} ×{" "}
-                        {product.specifications.dimensions.width} ×{" "}
-                        {product.specifications.dimensions.height}mm
-                      </p>
-                    )}
-                    <small>
-                      Também disponível em medidas personalizadas mediante
-                      consulta.
-                    </small>
-                  </div>
-                </div>
-                {product.specifications.weight ? (
+              {product.specifications ? (
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Dumbbell className="h-6 w-6 text-blue-600" />
+                    <Ruler className="h-6 w-6 text-blue-600" />
                     <div>
-                      <p className="text-sm text-gray-600">Peso</p>
-                      <p className="font-semibold">
-                        {product.specifications.weight} kg
-                      </p>
+                      <p className="text-sm text-gray-600">Dimensões</p>
+                      {typeof product.specifications.dimensions!.height ===
+                      "string" ? (
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.length} ×{" "}
+                          {product.specifications.dimensions!.width}{" "}
+                          {product.specifications.dimensions!.height}
+                        </p>
+                      ) : (
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.length} ×{" "}
+                          {product.specifications.dimensions!.width} ×{" "}
+                          {product.specifications.dimensions!.height}mm
+                        </p>
+                      )}
+                      <small>
+                        Também disponível em medidas personalizadas mediante
+                        consulta.
+                      </small>
                     </div>
                   </div>
-                ) : null}
+                  {product.specifications.weight ? (
+                    <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <Dumbbell className="h-6 w-6 text-blue-600" />
+                      <div>
+                        <p className="text-sm text-gray-600">Peso</p>
+                        <p className="font-semibold">
+                          {product.specifications.weight} kg
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
 
-                {product.specifications.dimensions.thickness ? (
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Proportions className="h-6 w-6 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-600">Espessura</p>
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.thickness}
-                      </p>
+                  {product.specifications.dimensions!.thickness ? (
+                    <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <Proportions className="h-6 w-6 text-blue-600" />
+                      <div>
+                        <p className="text-sm text-gray-600">Espessura</p>
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.thickness}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ) : null}
-                {/* <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  ) : null}
+                  {/* <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                   <Zap className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Voltagem</p>
@@ -490,7 +538,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                     <p className="font-semibold">{product.specifications.precision}</p>
                   </div>
                 </div> */}
-              </div>
+                </div>
+              ) : null}
 
               {/* Price and Delivery */}
               <div className="border-t border-gray-200 pt-6">
@@ -509,7 +558,16 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                     </p>
                   </div> */}
                 </div>
-                <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                <button
+                  className="w-full border-2 border-blue-600 mb-5 text-black py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition-colors duration-200 cursor-pointer"
+                  onClick={dominarRolagem}
+                >
+                  Ver tabela de dimensões
+                </button>
+                <button
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 cursor-pointer"
+                  onClick={() => setIsModalOpen(true)}
+                >
                   Solicitar Orçamento
                 </button>
               </div>
@@ -581,13 +639,100 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
               )}
             </div>
 
-            <div className="p-8">
+            <div id="tabela-dimensoes" className="px-8 pt-24 pb-8">
               {/* Dimensions Table */}
               {tableDimensions ? (
                 <TableDimensions tableInfos={tableDimensions} />
               ) : null}
             </div>
           </div>
+
+          {/* Renderização Condicional do Modal */}
+          {isModalOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+              {/* Card do Modal */}
+              <div className="bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl relative">
+                {/* Botão de Fechar (X) no topo */}
+                <button
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold cursor-pointer"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  &times;
+                </button>
+
+                {/* Conteúdo do Modal */}
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Solicitar Orçamento
+                </h3>
+
+                <p className="text-gray-600 mb-6">
+                  Preencha os dados abaixo ou insira o formulário aqui para
+                  receber sua cotação.
+                </p>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="block text-sm font-medium text-gray-700 mb-2">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        Nome Completo *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="material"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
+                      Material *
+                    </label>
+                    <select
+                      id="material"
+                      name="material"
+                      required
+                      value={formData.material}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    >
+                      <option value="">Selecione um tipo de material</option>
+                      <option value="Fina Frio">Fina Frio</option>
+                      <option value="Aço Carbono">Aço Carbono</option>
+                    </select>
+                  </div>
+
+                  <div className="flex justify-end gap-3">
+                    <button
+                      className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition cursor-pointer"
+                      onClick={() => setIsModalOpen(false)}
+                    >
+                      Cancelar
+                    </button>
+
+                    <button
+                      type="submit"
+                      className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
+                    >
+                      <Send className="h-5 w-5 mr-2" />
+                      Enviar Mensagem
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
