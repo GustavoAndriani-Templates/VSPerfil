@@ -351,8 +351,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // const whatsappNumber = "5517981301284";
-    const whatsappNumber = "5516996192224";
+    const whatsappNumber = "5517981301284";
+    // const whatsappNumber = "5516996192224";
 
     const text = `
         *NOVA SOLICITAÇÃO DE ORÇAMENTO PELO SITE*
