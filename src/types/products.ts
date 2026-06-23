@@ -6,11 +6,11 @@ export interface Products {
   fullDescription: string;
   image: string;
   gallery: string[];
-  specifications: {
-    dimensions: {
-      length: number;
+  specifications?: {
+    dimensions?: {
+      length?: number;
       width?: number;
-      height: number | string;
+      height?: number | string;
       thickness?: number | string;
       custom?: boolean;
     };

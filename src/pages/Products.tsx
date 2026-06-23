@@ -36,7 +36,7 @@ const ProductsPage: React.FC<ProductsProps> = ({ products: Products }) => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Nossos Produtos</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Descubra nossa linha completa de metalons galvanizados
+            Descubra nossa linha completa de tubos de aço
           </p>
         </div>
 
