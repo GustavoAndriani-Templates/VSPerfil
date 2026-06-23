@@ -428,55 +428,56 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
               </div>
 
               {/* Key Specifications */}
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                  <Ruler className="h-6 w-6 text-blue-600" />
-                  <div>
-                    <p className="text-sm text-gray-600">Dimensões</p>
-                    {typeof product.specifications.dimensions.height ===
-                    "string" ? (
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.length} ×{" "}
-                        {product.specifications.dimensions.width}{" "}
-                        {product.specifications.dimensions.height}
-                      </p>
-                    ) : (
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.length} ×{" "}
-                        {product.specifications.dimensions.width} ×{" "}
-                        {product.specifications.dimensions.height}mm
-                      </p>
-                    )}
-                    <small>
-                      Também disponível em medidas personalizadas mediante
-                      consulta.
-                    </small>
-                  </div>
-                </div>
-                {product.specifications.weight ? (
+              {product.specifications ? (
+                <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Dumbbell className="h-6 w-6 text-blue-600" />
+                    <Ruler className="h-6 w-6 text-blue-600" />
                     <div>
-                      <p className="text-sm text-gray-600">Peso</p>
-                      <p className="font-semibold">
-                        {product.specifications.weight} kg
-                      </p>
+                      <p className="text-sm text-gray-600">Dimensões</p>
+                      {typeof product.specifications.dimensions!.height ===
+                      "string" ? (
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.length} ×{" "}
+                          {product.specifications.dimensions!.width}{" "}
+                          {product.specifications.dimensions!.height}
+                        </p>
+                      ) : (
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.length} ×{" "}
+                          {product.specifications.dimensions!.width} ×{" "}
+                          {product.specifications.dimensions!.height}mm
+                        </p>
+                      )}
+                      <small>
+                        Também disponível em medidas personalizadas mediante
+                        consulta.
+                      </small>
                     </div>
                   </div>
-                ) : null}
+                  {product.specifications.weight ? (
+                    <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <Dumbbell className="h-6 w-6 text-blue-600" />
+                      <div>
+                        <p className="text-sm text-gray-600">Peso</p>
+                        <p className="font-semibold">
+                          {product.specifications.weight} kg
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
 
-                {product.specifications.dimensions.thickness ? (
-                  <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <Proportions className="h-6 w-6 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-600">Espessura</p>
-                      <p className="font-semibold">
-                        {product.specifications.dimensions.thickness}
-                      </p>
+                  {product.specifications.dimensions!.thickness ? (
+                    <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                      <Proportions className="h-6 w-6 text-blue-600" />
+                      <div>
+                        <p className="text-sm text-gray-600">Espessura</p>
+                        <p className="font-semibold">
+                          {product.specifications.dimensions!.thickness}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ) : null}
-                {/* <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  ) : null}
+                  {/* <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                   <Zap className="h-6 w-6 text-blue-600" />
                   <div>
                     <p className="text-sm text-gray-600">Voltagem</p>
@@ -490,7 +491,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                     <p className="font-semibold">{product.specifications.precision}</p>
                   </div>
                 </div> */}
-              </div>
+                </div>
+              ) : null}
 
               {/* Price and Delivery */}
               <div className="border-t border-gray-200 pt-6">
@@ -509,7 +511,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
                     </p>
                   </div> */}
                 </div>
-                <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
+                <button className="w-full border-2 border-blue-600 mb-5 text-black py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition-colors duration-200 cursor-pointer">
+                  Ver tabela de dimensões
+                </button>
+                <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 cursor-pointer">
                   Solicitar Orçamento
                 </button>
               </div>
