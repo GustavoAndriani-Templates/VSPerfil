@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Ruler, Calendar, Dumbbell } from '@vitejs/plugin-react';
 import { Products } from "../../types/products";
-import { Calendar, Proportions, Ruler } from "lucide-react";
+import { Proportions, Ruler } from "lucide-react";
 
 interface productCardProps {
   product: Products;
