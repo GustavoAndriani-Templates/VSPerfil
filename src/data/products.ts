@@ -27,12 +27,11 @@ export const productsData: Products[] = [
       "Tubo redondo de aço galvanizado: ideal para estruturas metálicas, construção civil, serralherias e indústrias moveleiras.",
     fullDescription:
       "O tubo redondo de aço galvanizado é fabricado com aço de alta qualidade e revestido com uma camada de zinco para proteção contra corrosão. É perfeito para aplicações que exigem resistência e durabilidade, sendo amplamente utilizado em estruturas metálicas, suportes, grades e projetos de construção civil.Por sua versatilidade e excelente acabamento, é também a escolha ideal para serralherias e indústrias moveleiras, atendendo desde a fabricação de portões e corrimãos até a criação de estruturas de móveis modernos e funcionais. Sua superfície galvanizada garante longa vida útil mesmo em ambientes externos, tornando-o uma escolha confiável e econômica para diversos tipos de projetos.",
-    image: "/productsImages/tubo_redondo/tubo_redondo.jpg",
+    image: "/productsImages/tubo_redondo/tubo_redondo.png",
     gallery: [
-      "/productsImages/tubo_redondo/tubo_redondo_3.jpg",
-      // '/productsImages/tubo_redondo/tubo_redondo_4.jpg',
-      "/productsImages/tubo_redondo/tubo_redondo_5.jpg",
-      "/productsImages/tubo_redondo/tubo_redondo_7.jpg",
+      "/productsImages/tubo_redondo/tubo_redondo_2.png",
+      "/productsImages/tubo_redondo/tubo_redondo_3.png",
+      "/productsImages/tubo_redondo/tubo_redondo_4.png",
     ],
     technicalDetails: {
       Material: "Fina Frio ou Aço Carbono",
