@@ -82,28 +82,28 @@ export const galleryImages: GalleryImage[] = [
     tags: ["qualidade", "controle", "inspeção", "matéria-prima", "produção"],
     date: "2026-04-23"
   },
-  {
-    id: 11,
-    src: "/galleryImages/exp-01.jpeg",
-    alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
-    category: "Expansão",
-    tags: ["expansão", "pesquisa", "fábrica", "projetos"],
-    date: "2026-04-23"
-  },
-  {
-    id: 12,
-    src: "/galleryImages/exp-02.jpeg",
-    alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
-    category: "Expansão",
-    tags: ["expansão", "pesquisa", "fábrica", "projetos"],
-    date: "2026-04-23"
-  },
-  {
-    id: 13,
-    src: "/galleryImages/exp-03.jpeg",
-    alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
-    category: "Expansão",
-    tags: ["expansão", "pesquisa", "fábrica", "projetos"],
-    date: "2026-04-23"
-  }
+  // {
+  //   id: 11,
+  //   src: "/galleryImages/exp-01.jpeg",
+  //   alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
+  //   category: "Expansão",
+  //   tags: ["expansão", "pesquisa", "fábrica", "projetos"],
+  //   date: "2026-04-23"
+  // },
+  // {
+  //   id: 12,
+  //   src: "/galleryImages/exp-02.jpeg",
+  //   alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
+  //   category: "Expansão",
+  //   tags: ["expansão", "pesquisa", "fábrica", "projetos"],
+  //   date: "2026-04-23"
+  // },
+  // {
+  //   id: 13,
+  //   src: "/galleryImages/exp-03.jpeg",
+  //   alt: "Nossa equipe de P&D trabalhando em novos projetos de expansão",
+  //   category: "Expansão",
+  //   tags: ["expansão", "pesquisa", "fábrica", "projetos"],
+  //   date: "2026-04-23"
+  // }
 ];
