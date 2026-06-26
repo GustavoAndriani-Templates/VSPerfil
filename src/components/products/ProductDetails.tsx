@@ -450,13 +450,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ products }) => {
             <div>
               <div className="mb-6">
                 <span
-                  className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 ${
-                    product.category === "redondo"
-                      ? "bg-red-100 text-red-800"
-                      : product.category === "quadrado"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-purple-100 text-purple-800"
-                  }`}
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 bg-gray-900 text-white`}
                 >
                   {product.category === "redondo"
                     ? "Tubo Redondo"
