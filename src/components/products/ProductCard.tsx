@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Ruler, Calendar, Dumbbell } from '@vitejs/plugin-react';
 import { Products } from "../../types/products";
-import { Calendar, Proportions, Ruler } from "lucide-react";
+import { Proportions, Ruler } from "lucide-react";
 
 interface productCardProps {
   product: Products;
@@ -19,13 +18,7 @@ const ProductCard: React.FC<productCardProps> = ({ product }) => {
         />
         <div className="absolute top-4 left-4">
           <span
-            className={`px-3 py-1 rounded-full text-sm font-medium ${
-              product.category === "redondo"
-                ? "bg-red-100 text-red-800"
-                : product.category === "quadrado"
-                  ? "bg-blue-100 text-blue-800"
-                  : "bg-purple-100 text-purple-800"
-            }`}
+            className={`px-3 py-1 rounded-full text-sm font-medium bg-gray-900 text-white`}
           >
             {product.category === "redondo"
               ? "Redondo"
