@@ -85,7 +85,7 @@ const Home: React.FC<HomeProps> = ({ featuredProducts }) => {
               Soluções industriais especializadas em corte e dobra de metalon galvanizado. Tecnologia de ponta e processos automatizados para maximizar a produtividade e a qualidade dos nossos clientes.
             </p>
             <Link
-              to="/machines"
+              to="/products"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors duration-200 inline-flex items-center"
             >
               Ver Catálogo Completo
